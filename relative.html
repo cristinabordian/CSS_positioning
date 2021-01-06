@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Positioning: Relative</title>
+    <style>
+        body {
+            background-color: #222;
+        }
+        .parent {
+            border: 2px solid orange;
+            padding: 10px;
+            display: inline-block;
+        }
+        .parent div {
+            width: 100px;
+            height: 100px;
+            
+        }
+        .parent .child-1 {
+            background-color: #555;
+        }
+        .parent .child-2 {
+            background-color: #888;
+
+            /* RELATIVE POSITION */
+            position: relative; /*nothing changes but it gives us the posibility of moving this box around by using top,bottom, left, right */
+            top: 50px; /*div moved down without changing the position of child-3; child-1 & child-3 continue to think child-2 is still placed between them*/
+            left: 50px; /*visually child-2 moved by 50px lower and 50px to the right, but the browser (internally) will asume the initial position in its own calculations */
+            z-index: -1;
+        }
+        .parent .child-3 {
+            background-color: #bbb;
+        }
+    </style>
+    
+</head>
+<body>
+    <!--HW1:  Browser formula for BODY HEIGHT: height child-1 + height child-2 + height child-3 + (2px border x 2)-->
+    <div class="parent">
+        <div class="child-1">1</div>
+        <div class="child-2">2</div>
+        <div class="child-3">3</div>
+    </div>
+    
+</body>
+</html>
