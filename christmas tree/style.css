@@ -1,0 +1,210 @@
+body {
+    background-color: #223;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+}
+
+h1, h2 {
+    margin: 0;
+    font-weight: 100;
+    text-align: center;
+}
+
+h2:last-of-type {
+    margin-bottom: 30px;
+}
+
+.tree {
+    width: 400px;
+    height: 700px;
+    border: 1px solid #555;
+    display: inline-block;
+    /* margin: 20px auto; */
+    text-align: center;
+    background-image: url(https://image.freepik.com/free-vector/christmas-snow-overlay_1048-11413.jpg);
+    background-size: cover;
+    
+}
+
+.tree #star:before {
+  content:"";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: yellow;
+  box-shadow: 2px 2px 8px 0.5px yellow;
+  top: -3px;
+  left: -12px;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.tree #star:after {
+  content:"";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: yellow;
+  box-shadow: 1px 1px 6px 0.5px yellow;
+  left: -12px;
+  top: -3px;
+  transform: rotate(90deg);
+  z-index: 2;
+}
+
+.tree > div {
+    font-size: 0;
+}
+
+/* HW1: display: inline-block, table-* 
+center element - WITHOUT margin */
+
+/*HW2 - finish 1st segment - done*/
+
+.tree > :nth-child(1) {
+    /* background-color: darkred; */
+    margin: 0 140px;
+    border-bottom: 60px solid darkgreen;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    position: relative;
+    margin-top: 195px;
+}
+
+.tree > :nth-child(2) {
+    /* background-color: darkred; */
+    margin: 0 120px;
+    border-bottom: 70px solid darkgreen;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    position: relative;
+}
+
+.tree > :nth-child(3) {
+    /* background-color: darkred; */
+    margin: 0 100px;
+    border-bottom: 80px solid darkgreen;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    position: relative;
+}
+
+.tree > :nth-child(4) {
+    /* background-color: darkred; */
+    margin: 0 70px;
+    border-bottom: 100px solid darkgreen;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    position: relative;
+}
+
+.tree > :nth-child(5) {
+    /* background-color: darkred; */
+
+    border-bottom: 150px solid darkgreen;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    position: relative;
+}
+
+.tree .ball {
+    width: 20px;
+    height: 20px;
+    /* background-color: darkred; */
+    position: absolute;  /*absolute ptr ca se face cut, celelalte elemente inceteaza sa vada acest element*/
+    /* font-size: 15px; */
+    background-image: radial-gradient(at top right, silver, darkgoldenrod);
+    border-radius: 100%;
+    box-shadow: 1px 1px 5px 0.5px yellow;
+}
+
+.tree > :nth-child(2)> .ball {
+   /* position: absolute; */
+    top: 25px;
+    right: 25px;
+
+}
+
+.tree > :nth-child(3)> .ball:nth-child(1) {
+    top: 40px;
+    left: 35px;;
+}
+
+.tree > :nth-child(4)> .ball:nth-child(1) {
+    /*trick ca sa facem .ball sa isi masoara coordonatele de la parinte, trebuie sa scoatem parintele din pozitia statica dandui acestuia (div4) position relative
+    */
+    /*combinatia relative-absolute este DES utizata in CSS: parintele - relative, child - absolute (copilul masoara coordonatele de la parinte, ofera copilului o baza de coordonate)*/
+
+    top: 60px;
+    left: -20px;
+
+}
+
+.tree > :nth-child(4)> .ball:nth-child(2) {
+    top: 60px;
+    right: -20px;
+}
+
+.tree > :nth-child(5)> .ball:nth-child(1) {
+    top: 100px;
+    right: 30px;
+}
+  
+
+.tree .lights {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-color:gray;
+    transform: rotate(45deg);
+
+}
+
+.tree > :nth-child(5)> .lights:nth-child(2) {
+    right: 15px;
+    top: 15px;
+}
+
+.tree > :nth-child(5)> .lights:nth-child(3) {
+    right: 95px;
+    top: 75px;
+}
+
+.tree > :nth-child(5)> .lights:nth-child(4) {
+    bottom: -105px;
+    left: 85px;
+}
+
+.tree .on-switch {
+    background-color:#631D16;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 10px;
+    margin: -3px;
+}
+
+.tree:target .lights {
+   /* background-color: cyan; */
+   animation: flashing 2s infinite;
+}
+
+@keyframes flashing {
+    0 {
+        background-color:gray;
+    }
+    25% {
+        background-color:cyan;
+    }
+    50%{
+       background-color: #bfff80;
+    }
+    75% {
+       background-color: #ff3333;
+    }
+    100% {
+        background-color: #ff33ff;
+        box-shadow: 1px 1px 5px 0.5px yellow;
+
+    }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Christmas Tree | CSS</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>CSS Example</h1>
+    <h2>With Document Flow</h2>
+    <h2>With Position</h2>
+    <h2>With Pseudo-States</h2>
+    <h2>With Effects</h2>
+
+    <div class="tree" id="l-1">
+        <div>
+          <div id="star"></div>
+        </div>
+       
+        <div>
+            <div class="lights"></div>
+            <div class="ball">2</div>
+        </div>
+
+        <div>
+            <div class="ball">2</div>
+            <div class="lights"></div>
+        </div>
+
+        <div>4 <!--parent:4 | static + flow-->
+            <div class="ball">1</div>
+             <!--child:1 | absolute - flow  (by default isi masoara coordonatele de la fereastra)-->
+             <div class="ball">2</div>
+             <div class="lights"></div>
+        </div>
+
+        <div>
+            <div class="ball">2</div>
+            
+            <div class="lights"></div>
+            <div class="lights"></div>
+            <div class="lights"></div>
+            <div class="lights"></div>
+        </div>
+        <a href="#l-1" class="on-switch">ON</a>
+        <a href="#" class="on-switch">OFF</a>
+
+    </div>
+</body>
+</html>
