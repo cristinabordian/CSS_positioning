@@ -1,0 +1,172 @@
+body {
+    background-color: #223;
+}
+
+.abs-center {
+    /* ABSOLUTE CENTER*/
+    position: absolute;
+    top:0;
+    right:0;
+    bottom: 0;
+    left:0;
+    margin: auto;  /*CSS trick - centru absolut - pos: abs, top, rigth, bottom, left w/value 0 & margin - auto*/
+}
+
+
+.carousel {
+    background-color: #5554;
+    width: 700px;
+    height: 700px;
+
+    perspective: 800px ; /*perspective se da parintelui elementului care vrem sa il rotim, cazul dat - inclinam slides*/
+}
+
+    
+
+.carousel .slides {
+    background-color: #7774;
+    width: 600px;
+    height: 600px;
+
+    transform: rotateX(35deg);
+    perspective: 800px ;
+}
+
+.carousel .slides div {
+   background-color: #131;
+   width: 400px;
+   height: 600px;
+   border: 1px solid black;
+
+   transform-origin: center center -115px;
+}
+
+
+
+
+.carousel .slides div:nth-child(1) {
+    transform: rotateX(-42deg) scaleY(1);
+    z-index: 1;
+    /* opacity: 0.25; */
+
+    animation: rot-1 30s infinite linear;
+}
+
+.carousel .slides div:nth-child(1):after {
+    content: "";
+    display: block;
+    background-image: URL(image-1.jpg);
+    width: inherit;
+    height: inherit;
+    transform: scaleY(-1);
+    opacity: 0.3;
+    
+}
+
+.carousel .slides div:nth-child(1):hover {
+    /* opacity: 1; */
+}
+
+.carousel .slides div:nth-child(2) {
+    transform: rotateX(-42deg) rotateY(120deg) scaleY(1); 
+    /* opacity: 0.25; */
+
+
+    animation: rot-2 30s infinite linear;
+}
+
+.carousel .slides div:nth-child(2):after {
+    content: "";
+    display: block;
+    background-image: URL(image-2.jpg);
+    width: inherit;
+    height: inherit;
+    transform: scaleY(-1);
+    opacity: 0.3;
+}
+
+.carousel .slides div:nth-child(2):hover {
+    /* opacity: 1; */
+}
+
+
+.carousel .slides div:nth-child(3) {
+    transform: rotateX(-42deg) rotateY(240deg) scaleY(1);
+    /* opacity: 0.25; */
+
+    animation: rot-3 30s infinite linear;
+}
+
+.carousel .slides div:nth-child(3):after {
+    content: "";
+    display: block;
+    background-image: URL(image-3.jpg);
+    width: inherit;
+    height: inherit;
+    transform: scaleY(-1);
+    opacity: 0.3;
+
+    
+}
+
+.carousel .slides div:nth-child(3):hover {
+    /* opacity: 1; */
+}
+
+
+@keyframes rot-1 {
+0% {
+    transform: rotateX(-42deg) rotateY(0deg) scaleY(1);
+    z-index: 1;
+    filter: brightness(100%);
+}
+
+44% {
+    transform: rotateX(-42deg) rotateY(158.4deg) scaleY(1);
+    z-index: 0;
+    filter: brightness(1%);
+}
+
+100% {
+    transform: rotateX(-42deg) rotateY(360deg) scaleY(1);
+    z-index: 2;
+    filter: brightness(100%);
+}
+}
+
+@keyframes rot-2 {
+    0% {
+        transform: rotateX(-42deg) rotateY(120deg) scaleY(1);
+        z-index: 0;
+        filter: brightness(1%);
+    }
+
+    88% {
+        transform: rotateX(-42deg) rotateY(436.8deg) scaleY(1);
+        z-index: 1;
+        filter: brightness(100%);
+    }
+    
+    100% {
+        transform: rotateX(-42deg) rotateY(480deg) scaleY(1);
+        z-index: -1;
+        filter: brightness(1%);
+    }
+    }
+
+    @keyframes rot-3 {
+        0% {
+            transform: rotateX(-42deg) rotateY(240deg) scaleY(1);
+            
+        }
+
+      100% {
+            transform: rotateX(-42deg) rotateY(600deg) scaleY(1);
+            filter: brightness(1%);
+        }
+        }
+
+/* HW1 - initial low opacity   -> :hover - opacity high
+   HW2 - add props in animation - while slides in background - filter: brightness ()
+   HW3 - add image reflections - 2 same images in same div - gradient
+/* -  */ 
