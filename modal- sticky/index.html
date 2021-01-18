@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modal Window: pseudo + position</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+    <!-- HW1: Why MAIN? -->
+    <main id="content">
+       
+      <h1>Lorem ipsum dolor sit amet.</h1>
+      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, voluptatem!</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque quos, ea, obcaecati asperiores maiores placeat non minima rerum labore fugiat animi unde cupiditate optio quas ut quibusdam in tempora rem. Esse labore quos quisquam voluptas quasi! Architecto neque eligendi odio maiores eius. Asperiores odit beatae sapiente dolore unde hic perspiciatis!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error magni dolores assumenda quae sint consequatur voluptates obcaecati autem veniam ea corrupti accusantium odio, at cupiditate consequuntur voluptatibus facere quis officiis vero blanditiis labore illum quam odit? Molestiae vitae iure reprehenderit inventore, fugit corrupti, odit in reiciendis quia non, sunt quidem!</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea in repudiandae consequatur assumenda quia temporibus adipisci, odit libero alias nihil fuga consectetur maiores necessitatibus aperiam optio molestias ex impedit obcaecati! Itaque quo architecto reiciendis quasi temporibus voluptatibus ad ratione? Quos molestiae quisquam amet expedita ut ea sit assumenda eligendi consequatur.</p>
+    
+      <p class="ad">
+         To benefit from it HIT 
+           <a href="#modal">
+                      THIS BUTTON</a> 
+        </p>
+                  
+    </main>
+    <div id="modal">
+        <!-- HW2: Is it correct to use h1 in the modal window?
+
+            Answer: The web developmet community doesn't recommend using multiple h1 elements in one page, however there is no rule set in stone that says we cannot have more than one h1 element. 
+            In this particular example we do have a modal window which is not really part of the main flow so we could get away with using an h1 element here. Personally I would use h2. While h1 allows us to use one h1 heading per sectioning element, it is not considered best practive to have multiple h1 elements. 
+            
+        -->
+       <h2>Apply for this product</h2>
+       <h3>In order to apply fill in the blank</h3>
+         <form>
+              <!-- HW3: Form
+               +label -> input - done
+               + [selct] -> prefixes [input phone]
+               +full, phone - required fields - done-->
+               <div>
+                  <label for="name">
+                      <input type="text" placeholder="full name" required id="name">
+                  </label>
+              </div>  
+
+              <div> 
+                  <label for="country-code">
+                      <select name="country-code" id="country-code">
+                          <option value="">--Country Code--</option>
+                          <option value="MD">+373 🇲🇩 Moldova</option>
+                          <option value="UK">+44 🇬🇧 United Kingdom</option>
+                          <option value="RO">+40 🇷🇴 Romania</option>
+                      </select>
+                 </label>
+              </div> 
+
+              <div>
+                  <label for="phone">
+                      <input type="tel" placeholder="phone: +12345678" required id="phone">
+                  </label>
+              </div>
+
+             <div>
+                 <label for="email">
+                     <input type="text" placeholder="email: john.doe@email.com" id="email">
+                 </label>
+             </div>
+
+              <button>APPLY!</button>
+        </form>
+           <span><a href="#">x</a>  </span>
+             
+          
+         
+          
+        
+    </div>
+    <div class="overlay"></div>
+    
+</body>
+</html>

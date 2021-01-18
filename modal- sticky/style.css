@@ -1,0 +1,178 @@
+body {
+    font-family: Arial;
+    background-color: #223;
+    color: white;
+}
+
+#content {
+    width: 90%;
+    margin: 20% auto;
+    
+}
+
+#content p {
+    text-align: justify;
+}
+#content .ad {
+    
+    font-size: 150%;
+    margin: 5% 0;
+    text-align: right;
+    
+}
+
+
+
+/* #content .ad div {
+    display: inline-block;
+    width: 100px ;
+    height: 100px;
+    border: 1px solid white;
+    position: relative;
+    
+    border-radius: 100%;
+    white-space: nowrap;
+    box-shadow: 1px 1px 6px 2px orange;
+} */
+#content a {
+    background-color: orange;
+    color:#fff;
+    padding: 1%;
+    text-decoration: none;
+    margin-left: 2%;
+    display: inline-block;
+    box-shadow: 0 0 0 0 peru;
+    animation: pulse 2s infinite linear;
+
+    
+    
+   
+}
+
+#content a:hover {
+    animation-play-state: paused;
+}
+
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	
+	}
+	
+	50% {
+        transform: scale(1.1);
+        filter: drop-shadow(2px 2px 4px white)
+        
+	}
+	
+	100% {
+		transform: scale(1);
+        
+	}
+}   
+
+
+/* MODAL Window */
+
+#modal {
+    background-color: #678;
+    padding: 5%;
+   
+    display: none;
+    position: fixed;
+
+    top: 30%;
+    /* bottom: 30%; */
+    left: 25%;
+    right: 25%;
+    z-index: 1;
+}
+
+#modal:target {
+    display: block;
+}
+
+#modal form > div {
+    /* width: 50px; */
+    height: 10px;
+    background-color: #fff;
+    border: 1px solid #678;
+    border-radius: 4px;
+    padding: 3%;
+    width: 80%;
+
+}
+
+#modal form > div:hover {
+    border: 2px solid black;
+}
+
+input {
+    background-color: transparent;
+    border: 0px solid;
+    height: 20px;
+    width: 160px;
+    color: #CCC;
+}
+
+
+select {
+    color: #999;
+}
+
+#modal button {
+    padding: 2%;
+    width: 86.5%;
+    border-radius: 6px;
+}
+
+#modal button:hover {
+    color: black;
+    font-weight: bold;
+    background-color:#e6f2ff;
+}
+
+#modal a {
+  width: 2em;
+  height: 2em;
+  display: block;
+  text-align: center; /*a se afla intr-un bloc, deci centram prin text-align*/
+  line-height: 2em;
+  background-color: transparent;
+  border-radius: 2em;
+  text-decoration: none;
+  color: #333;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+      
+}
+
+#modal a:hover {
+    background-color: #fff;
+    color: red;
+    font-size: 1.25em;
+}
+
+  
+  
+  
+
+
+
+#modal:target+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background-color: #000A;
+}
+
+/* 
+  HW4 - UX:
+  - X, this button, elementele form - add hover effects when active
+  - this button - add animation - pulse, border changes, etc, 
+  - use em for TEXT (instead of %, margin, padding, font-size)
+  */
