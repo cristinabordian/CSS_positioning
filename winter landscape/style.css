@@ -1,0 +1,221 @@
+
+html {
+     /*observam ca animatia nu functioneaza corect si am adaugat /bg*/
+}
+
+body {
+    margin: 0;
+    overflow: hidden; /* ascunde tot ce este in afara body*/
+
+   /* filter: blur(10px);  -nu se aplica blur pe background, DOAR pe continut*/
+}
+
+.bg {  /*.bg este un fix ca toate animatiile sa funtioneze correct si concomitent */
+    width: 100vw;
+    height: 100vh; /*dimensiunea pe verticala se calculeaza automat si daca marim valoarea vh, imaginea se va extinde pe verticala*/
+    position: absolute;
+
+    background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; /*regim inteligent care se adapteaza dupa fereastra*/
+    background-position: 60% bottom;
+
+    animation: day-night 30s infinite;
+}
+
+.window-fire {
+    width: 5.5%;
+    height: 10%;
+    background: radial-gradient(darkorange, transparent);
+    position: absolute;
+    top: 58.9%;
+    left: 45.5%;
+
+    
+
+    border-radius: 25%;
+
+    mix-blend-mode: hard-light;
+
+    animation: burn 2s infinite;
+}
+
+
+.snow {
+    /* background-color: blue; */
+    position: absolute;
+    width: 100%;  /*w/h se masoara fata de fereastra ptr ca position e absolute*/
+    height: 98%;
+    animation: day-night 30s infinite;
+}
+
+.snow .flake {
+    position: absolute;
+    top: -3%;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-image: radial-gradient(white, transparent);
+
+    
+}
+
+
+
+.snow .flake:nth-child(3n) {
+    animation: flake-anim-1 20s infinite linear;
+}
+
+.snow .flake:nth-child(2n) {
+    animation: flake-anim-2 20s infinite linear;
+}
+
+.snow .flake.small {
+    width: 12px;
+    height: 12px;
+   animation-duration: 30s;
+}
+
+.snow .flake:nth-child(1) {
+    left: 23%;
+    animation-delay: 1s;
+}
+
+.snow .flake:nth-child(2) {
+    left: 14%;
+}
+
+.snow .flake:nth-child(3) {
+    left: 36%;
+    animation-delay: 4s;
+}
+
+.snow .flake:nth-child(4) {
+    left: 40%;
+    animation-delay: 0.5s;
+}
+.snow .flake:nth-child(5) {
+    left: 55%;
+    animation-delay: 3s;
+}
+.snow .flake:nth-child(6) {
+    left: 69%;
+    animation-delay: 7s;
+}
+.snow .flake:nth-child(7) {
+    left: 75%;
+    animation-delay: 5.5s;
+}
+.snow .flake:nth-child(8) {
+    left: 83%;
+    animation-delay: 2s;
+}
+.snow .flake:nth-child(9) {
+    left: 97%;
+    animation-delay: 9s;
+}
+.snow .flake:nth-child(10) {
+    left: 5%;
+    animation-delay: 10s;
+}
+
+
+.snow .flake.small:nth-child(11) {
+    left: 13%;
+    animation-delay: 1s;
+}
+
+.snow .flake.small:nth-child(12) {
+    left: 24%;
+    animation-delay: 13s;
+}
+
+.snow .flake.small:nth-child(13) {
+    left: 86%;
+    animation-delay: 1s;
+}
+
+.snow .flake.small:nth-child(14) {
+    left: 45%;
+    animation-delay: 0.5s;
+}
+.snow .flake.small:nth-child(15) {
+    left: 50%;
+    animation-delay: 17s;
+}
+.snow .flake.small:nth-child(16) {
+    left: 19%;
+    animation-delay: 9s;
+}
+.snow .flake.small:nth-child(17) {
+    left: 70%;
+    animation-delay: 5.5s;
+}
+.snow .flake.small:nth-child(18) {
+    left: 27%;
+    animation-delay: 12s;
+}
+.snow .flake.small:nth-child(19) {
+    left: 94%;
+    animation-delay: 18s;
+}
+.snow .flake.small:nth-child(20) {
+    left: 19%;
+    animation-delay: 5s;
+}
+
+
+
+
+
+@keyframes flake-anim-1 {
+    from { 
+        top: -3%;
+        opacity: 1;
+    }
+    50% { 
+        top: 100%;
+        opacity: 1;
+    }
+    to {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes flake-anim-2 {
+    from { 
+        top: -3%;
+        opacity: 1;
+    }
+    50% { 
+        top: 95%;
+        opacity: 1;
+    }
+    to {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes day-night {
+    from {
+        filter: grayscale(0%) brightness(110%);
+    }
+    50% {
+        filter: grayscale(80%) brightness(10%);
+    }
+    to {
+        filter: grayscale(0%) brightness(110%);
+    }
+}
+
+@keyframes burn {
+    from {opacity: 0.6;}
+    20% {opacity: 0.8;}
+    30% {opacity: 0.9;}
+    50% {opacity: 0.8;}
+    70% {opacity: 0.6;}
+    70% {opacity: 0.65;}
+    to  {opacity: 0.9;}
+}
